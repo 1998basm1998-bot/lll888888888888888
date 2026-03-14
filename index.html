@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقسيط ومحاسبة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header id="top-bar">
+        <h1 id="page-title">الرئيسية</h1>
+        <button id="header-action-btn" class="hidden"><i class="fas fa-plus"></i></button>
+    </header>
+
+    <main id="app-content">
+        </main>
+
+    <nav id="bottom-nav">
+        <button class="nav-btn active" data-target="home">
+            <i class="fas fa-home"></i>
+            <span>الرئيسية</span>
+        </button>
+        <button class="nav-btn" data-target="customers">
+            <i class="fas fa-users"></i>
+            <span>العملاء</span>
+        </button>
+        <button class="nav-btn" data-target="investors">
+            <i class="fas fa-chart-line"></i>
+            <span>المستثمرون</span>
+        </button>
+        <button class="nav-btn" data-target="settings">
+            <i class="fas fa-cog"></i>
+            <span>الإعدادات</span>
+        </button>
+    </nav>
+
+    <dialog id="modal-container">
+        <form id="modal-form" method="dialog">
+            <h2 id="modal-title">إضافة جديدة</h2>
+            <div id="modal-body"></div>
+            <div class="modal-actions">
+                <button type="button" id="modal-cancel">إلغاء</button>
+                <button type="submit" id="modal-submit">حفظ</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
