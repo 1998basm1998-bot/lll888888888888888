@@ -1,15 +1,17 @@
-/* متغيرات الألوان والتصميم */
+/* --- المتغيرات الأساسية للألوان والخطوط --- */
 :root {
-    --primary-color: #1b5e20; /* أخضر داكن يعكس الطابع المالي */
-    --secondary-color: #fbc02d; /* لون ذهبي ثانوي */
-    --background-color: #f5f5f5;
+    --primary-color: #1b5e20; /* أخضر مالي */
+    --secondary-color: #fbc02d; /* ذهبي */
+    --background-color: #f4f6f8;
     --surface-color: #ffffff;
-    --text-primary: #212121;
-    --text-secondary: #757575;
-    --danger-color: #d32f2f;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --danger-color: #ef4444;
+    --success-color: #10b981;
     --font-family-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* --- تصفير الهوامش الأساسية --- */
 * {
     margin: 0;
     padding: 0;
@@ -23,10 +25,10 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow: hidden; /* لمنع التمرير الكلي للصفحة */
+    overflow: hidden; /* نمنع تمرير الصفحة بالكامل، التمرير سيكون للمحتوى فقط */
 }
 
-/* شريط الإجراءات العلوي */
+/* --- الشريط العلوي --- */
 #top-bar {
     background-color: var(--primary-color);
     color: white;
@@ -38,28 +40,18 @@ body {
     z-index: 10;
 }
 
-#top-bar h1 {
-    font-size: 1.3rem;
-    font-weight: 600;
-}
+#top-bar h1 { font-size: 1.3rem; font-weight: 600; }
+#top-bar button { background: none; border: none; color: white; font-size: 1.3rem; cursor: pointer; }
 
-#top-bar button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.3rem;
-    cursor: pointer;
-}
-
-/* مساحة المحتوى الرئيسية */
+/* --- مساحة المحتوى الرئيسية --- */
 #app-content {
     flex: 1;
     overflow-y: auto;
     padding: 16px;
-    padding-bottom: 80px; /* لتجنب التغطية بواسطة الشريط السفلي */
+    padding-bottom: 80px; /* مسافة فارغة أسفل المحتوى حتى لا يغطيه شريط التنقل السفلي */
 }
 
-/* شريط التنقل السفلي */
+/* --- شريط التنقل السفلي --- */
 #bottom-nav {
     position: fixed;
     bottom: 0;
@@ -79,23 +71,16 @@ body {
     flex-direction: column;
     align-items: center;
     color: var(--text-secondary);
-    font-family: var(--font-family-main);
     font-size: 0.8rem;
     cursor: pointer;
     transition: color 0.3s;
     width: 25%;
 }
 
-.nav-btn i {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-}
+.nav-btn i { font-size: 1.4rem; margin-bottom: 5px; }
+.nav-btn.active { color: var(--primary-color); font-weight: bold; }
 
-.nav-btn.active {
-    color: var(--primary-color);
-}
-
-/* بطاقات الإحصائيات (الرئيسية) */
+/* --- تصميم البطاقات (للرئيسية والقوائم) --- */
 .dashboard-stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -109,25 +94,15 @@ body {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-bottom: 3px solid var(--primary-color);
 }
 
-.stat-card h3 {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
+.stat-card h3 { font-size: 0.9rem; color: var(--text-secondary); }
+.stat-card p { font-size: 1.3rem; font-weight: bold; color: var(--primary-color); margin-top: 8px; }
+.stat-card.danger { border-bottom-color: var(--danger-color); }
+.stat-card.danger p { color: var(--danger-color); }
 
-.stat-card p {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-top: 8px;
-}
-
-.stat-card.danger p {
-    color: var(--danger-color);
-}
-
-/* عناصر القوائم (العملاء والمستثمرين) */
+/* --- عناصر القوائم (عملاء، عقود، مستثمرين) --- */
 .list-item {
     background: var(--surface-color);
     padding: 15px;
@@ -139,26 +114,10 @@ body {
     align-items: center;
 }
 
-.list-item-title {
-    font-weight: 600;
-    font-size: 1.1rem;
-}
+.list-item-info .title { font-weight: 600; font-size: 1.1rem; }
+.list-item-info .subtitle { font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px; }
+.list-item-value { font-weight: bold; font-size: 1.1rem; color: var(--primary-color); }
 
-.list-item-subtitle {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin-top: 4px;
-}
-
-.icon-btn {
-    color: var(--primary-color);
-    background: #e8f5e9;
-    padding: 10px;
-    border-radius: 50%;
-    text-decoration: none;
-    display: inline-flex;
-}
-
-.hidden {
-    display: none!important;
-}
+/* أدوات مساعدة */
+.hidden { display: none !important; }
+.badge { background: var(--success-color); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.7rem; }
